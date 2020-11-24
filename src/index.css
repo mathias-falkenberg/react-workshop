@@ -1,5 +1,39 @@
-body {
+:root {
+  --header-height: 100px;
+  --footer-height: 50px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
   font-family: sans-serif;
   font-size: larger;
 }
 
+header, footer {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: dodgerblue;
+}
+
+header {
+  height: var(--header-height);
+}
+
+footer {
+  height: var(--footer-height);
+}
+
+h1 {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+main {
+  min-height: calc(100% - var(--header-height));
+  margin-bottom: calc(-1 * var(--footer-height));
+  padding: 20px;
+  box-sizing: border-box;
+}

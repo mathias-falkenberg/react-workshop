@@ -6,7 +6,9 @@ import Footer from './Footer';
 
 const App = () => <>
     <Header />
-    <Climate sensor={sensor}/>
+    <main>
+        <Climate sensor={sensor}/>
+    </main>
     <Footer />
 </>
 
