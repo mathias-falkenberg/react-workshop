@@ -1,7 +1,11 @@
 import React from 'react'
 
-const Header = () => <header>
-    <h1>the weather station</h1>
+interface HeaderProps {
+    title: string;
+}
+
+const Header = (props: HeaderProps) => <header>
+    <h1>{props.title}</h1>
 </header>;
 
 export default Header;

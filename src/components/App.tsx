@@ -5,11 +5,11 @@ import Climate from './Climate';
 import Footer from './Footer';
 
 const App = () => <>
-    <Header />
+    <Header title="The Weather Station" />
     <main>
         <Climate sensor={sensor}/>
     </main>
-    <Footer />
+    <Footer>Powered by React!</Footer>
 </>
 
 export default App;

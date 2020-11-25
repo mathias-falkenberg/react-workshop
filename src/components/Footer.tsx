@@ -1,5 +1,7 @@
 import React from 'react'
 
-const Footer = () => <footer>Powered by React</footer>;
+const Footer = (props: React.PropsWithChildren<{}>) => <footer>
+    {props.children}
+</footer>;
 
 export default Footer;
