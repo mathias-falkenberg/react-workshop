@@ -3,13 +3,14 @@ import { Sensor, SensorEvent } from '../lib/Sensor';
 
 interface DisplayProps {
     id: string;
+    'data-testid'?: string;
     label: string;
     value: number | null;
     unit: string;
 }
 
 const Display = (props: DisplayProps) => (
-    <div className={`gauge__${props.id}`}>
+    <div className={`gauge__${props.id}`} data-testid={props["data-testid"]}>
         {props.label}: {props.value?.toFixed(1) ?? '-'} {props.unit}
     </div>
 )
@@ -57,11 +58,11 @@ const Gauge = (props: GaugeProps) => {
         })
     }
 
-    return <div id={props.id} className='gauge'>
+    return <div id={props.id} title={props.id} className='gauge'>
         <h2>{props.id}</h2>
         <Display id="value" label={props.id} value={state.value} unit={props.unit} />
-        <Display id="min" label="Min" value={state.min} unit={props.unit} />
-        <Display id="value" label="Max" value={state.max} unit={props.unit} />
+        <Display id="min" data-testid={`${props.id}-min`} label="Min" value={state.min} unit={props.unit} />
+        <Display id="value" data-testid={`${props.id}-max`} label="Max" value={state.max} unit={props.unit} />
         <button className="gauge__reset button" onClick={onResetClick}>Reset</button>
     </div>
 }
