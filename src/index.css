@@ -1,6 +1,12 @@
 :root {
   --header-height: 80px;
   --footer-height: 56px;
+
+  --color-primary: #EBE1BA;
+  --color-secondary: #D5A166;
+  --color-tertiary: #A5ACA4;
+  --color-quaternary: #719F97;
+  --color-text: #4C4D48;
 }
 
 html,
@@ -10,6 +16,8 @@ body,
   margin: 0;
   font-family: sans-serif;
   font-size: 24px;
+  color: var(--color-text);
+  background-color: var(--color-primary);
 }
 
 header,
@@ -18,22 +26,27 @@ footer {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: dodgerblue;
 }
 
 header {
   height: var(--header-height);
+  color: var(--color-quaternary);
+  background-color: var(--color-text);
 }
 
 footer {
   height: var(--footer-height);
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+
+h1, h2 {
+  text-transform: capitalize;
+  font-feature-settings: "smcp";
 }
 
 h1 {
   margin: 0;
-  text-transform: capitalize;
-  text-decoration: italic;
 }
 
 main {
@@ -45,7 +58,7 @@ main {
 
 .climate {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   gap: 24px;
 }
 
@@ -53,12 +66,15 @@ main {
   display: inline-flex;
   flex-flow: column nowrap;
   flex-grow: 1;
-  border: 1px solid dodgerblue;
+  border: 2px solid var(--color-tertiary);
   padding: 16px;
   border-radius: 16px;
+  max-width: 300px;
 }
 
 .gauge h2 {
+  text-align: center;
+  border-bottom: 1px solid var(--color-tertiary);
   text-transform: capitalize;
   margin: 0 0 8px;
 }
@@ -72,24 +88,25 @@ main {
 }
 
 .button {
-  background-color: steelblue;
-  color: white;
+  background-color: transparent;
+  color: var(--color-text);
   padding: 6px 14px;
-  border: 2px solid transparent;
+  border: 2px solid var(--color-tertiary);
   border-radius: 16px;
   font-family: sans-serif;
   font-size: 24px;
 }
 
 .button:hover {
-  border-color: dodgerblue;
+  background-color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
 }
 
 .button:focus {
   outline: -webkit-focus-ring-color auto 0px;
-  border-color: black;
+  border-color: var(--color-quaternary);
 }
 
 .button:active {
-  background-color: gray;
+  background-color: var(--color-quaternary);
 }
