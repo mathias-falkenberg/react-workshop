@@ -15,6 +15,7 @@ header, footer {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  color: white;
   background-color: dodgerblue;
 }
 
@@ -29,6 +30,7 @@ footer {
 h1 {
   margin: 0;
   text-transform: capitalize;
+  text-decoration: italic;
 }
 
 main {
@@ -36,4 +38,12 @@ main {
   margin-bottom: calc(-1 * var(--footer-height));
   padding: 20px;
   box-sizing: border-box;
+}
+
+.gauge + .gauge {
+  margin-top: 20px;
+}
+
+.gauge__value {
+  text-transform: capitalize;
 }
