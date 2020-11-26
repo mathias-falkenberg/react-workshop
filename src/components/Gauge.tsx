@@ -62,7 +62,7 @@ const Gauge = (props: GaugeProps) => {
         <h2>{props.id}</h2>
         <Display id="value" label={props.id} value={state.value} unit={props.unit} />
         <Display id="min" data-testid={`${props.id}-min`} label="Min" value={state.min} unit={props.unit} />
-        <Display id="value" data-testid={`${props.id}-max`} label="Max" value={state.max} unit={props.unit} />
+        <Display id="max" data-testid={`${props.id}-max`} label="Max" value={state.max} unit={props.unit} />
         <button className="gauge__reset button" onClick={onResetClick}>Reset</button>
     </div>
 }
